@@ -12,10 +12,12 @@ Route::get('/create', function () {
 //edit route
 Route::get('/edit/{id}',[todosController::class, 'edit'])->name('todo.edit');
 
-//create todo route, tada create kore submit korle toto.store o jabe,,store function create
-Route::post('/create', [todosController::class, 'store'])->name('todo.store');
-
 //Delete todo route
 Route::get('/delete/{id}', [todosController::class, 'delete'])->name('todo.delete');
 
+//create todo route, tada create kore submit korle todo.store o jabe,,store function create
+Route::post('/create', [todosController::class, 'store'])->name('todo.store');
+
+//update todo data
+Route::post('/update', [todosController::class, 'update'])->name('todo.updatedata');
 

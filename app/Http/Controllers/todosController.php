@@ -50,4 +50,27 @@ class todosController extends Controller
         #data edit kore add korar por home page e jabe
        return view('update')->with($data);
     }
+
+    public function update(Request $request){
+           //print_r($request->all());
+           $request->validate(
+            [
+                'name' => 'required',
+                'work' => 'required',
+                'date' => 'required'
+            ] );
+           // echo "validation complete!";
+
+        #database o data pass
+        $id = $request['id'];
+        $todo = todos::find($id);
+        $todo->name=$request['name'];
+        $todo->work=$request['work'];
+        $todo->date=$request['date'];
+ 
+        $todo->save();
+
+        #data create kore add korar por home page e jabe
+        return Redirect(route('todo.home'));
+    }
 }
