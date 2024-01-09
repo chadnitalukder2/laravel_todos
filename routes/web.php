@@ -9,10 +9,8 @@ Route::get('/create', function () {
     return view('create');
 })->name('todo.create');
 
-Route::get('/edit', function () {
-    return view('update');
-})->name('todo.edit');
-
+//edit route
+Route::get('/edit/{id}',[todosController::class, 'edit'])->name('todo.edit');
 
 //create todo route, tada create kore submit korle toto.store o jabe,,store function create
 Route::post('/create', [todosController::class, 'store'])->name('todo.store');

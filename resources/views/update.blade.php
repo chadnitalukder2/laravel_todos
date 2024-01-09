@@ -11,20 +11,21 @@
             <a href="" class="btn btn-primary btn-lg">Back</a>
         </div>
         {{-- ----------------------------- --}}
+        {{-- {{ print_r($todo) }} --}}
         <div class="card">
             <div class="card-body">
                 <form action="" method="post">
                     @csrf
                     <label for="" class="form-lable mt-4">Name</label>
-                    <input type="text" name="name" class="form-control">
+                    <input type="text" name="name" class="form-control" value="{{ $todo->name }}">
 
                     <label for="" class="form-lable  mt-4">Work</label>
-                    <input type="text" name="work" class="form-control">
+                    <input type="text" name="work" class="form-control" value="{{ $todo->work }}">
 
                     <label for="" class="form-lable  mt-4">Due Date</label>
-                    <input type="date" name="date" class="form-control">
+                    <input type="date" name="date" class="form-control" value="{{ $todo->date }}">
                     
-                    <button class="btn btn-primary btn-lg mt-4">Add Todo</button>
+                    <button class="btn btn-primary btn-lg mt-4">Update Todo</button>
                 </form>
             </div>
         </div>

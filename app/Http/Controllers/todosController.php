@@ -42,4 +42,12 @@ class todosController extends Controller
        #data delete kore add korar por home page e jabe
        return Redirect(route('todo.home'));
     }
+
+    public function edit($id){
+        $todo = todos::find($id);
+        $data = compact('todo');
+
+        #data edit kore add korar por home page e jabe
+       return view('update')->with($data);
+    }
 }

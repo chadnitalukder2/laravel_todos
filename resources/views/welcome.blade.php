@@ -25,7 +25,7 @@
                     <td>{{ $todo->date }}</td>
                     <td>
                         <a href="{{ route('todo.delete', $todo->id) }}" class="btn btn-danger btn-sm">Delete</a>
-                        <a href="" class="btn btn-success btn-sm">Upadate</a>
+                        <a href="{{ route('todo.edit', $todo->id) }}" class="btn btn-success btn-sm">Upadate</a>
                     </td>
                 </tr>
             @endforeach
