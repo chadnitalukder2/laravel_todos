@@ -19,11 +19,12 @@
                 <th>Action</th>
             </tr>
             @foreach ($todosData as $todo) {{-- compact kora data variable--}}
-                <tr valign="middle">
+                <tr valign="middle" >
                     <td>{{ $todo->name }}</td>
                     <td>{{ $todo->work }}</td>
                     <td>{{ $todo->date }}</td>
                     <td>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <a href="{{ route('todo.delete', $todo->id) }}" class="btn btn-danger btn-sm">Delete</a>
                         <a href="{{ route('todo.edit', $todo->id) }}" class="btn btn-success btn-sm">Upadate</a>
                     </td>
